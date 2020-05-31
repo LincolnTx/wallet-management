@@ -57,6 +57,12 @@
         <e p="projeto.tcc.wallet.management.application.csproj" t="IncludeRecursive" />
       </e>
       <e p="projeto.tcc.wallet.management.domain" t="IncludeRecursive">
+        <e p="Aggregates" t="Include">
+          <e p="UserBalanceAggregate" t="Include">
+            <e p="AssetValueObject.cs" t="Include" />
+            <e p="UserBalance.cs" t="Include" />
+          </e>
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Events" t="Include">
           <e p="Event.cs" t="Include" />
@@ -78,6 +84,7 @@
           <e p="IAggregateRoot.cs" t="Include" />
           <e p="IRepository.cs" t="Include" />
           <e p="IUnitOfWork.cs" t="Include" />
+          <e p="ValueObject.cs" t="Include" />
         </e>
       </e>
       <e p="projeto.tcc.wallet.management.hub" t="IncludeRecursive">
