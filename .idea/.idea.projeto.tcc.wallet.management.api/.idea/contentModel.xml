@@ -59,8 +59,9 @@
       <e p="projeto.tcc.wallet.management.domain" t="IncludeRecursive">
         <e p="Aggregates" t="Include">
           <e p="UserBalanceAggregate" t="Include">
+            <e p="AssetBalance.cs" t="Include" />
             <e p="AssetValueObject.cs" t="Include" />
-            <e p="UserBalance.cs" t="Include" />
+            <e p="Balance.cs" t="Include" />
           </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
