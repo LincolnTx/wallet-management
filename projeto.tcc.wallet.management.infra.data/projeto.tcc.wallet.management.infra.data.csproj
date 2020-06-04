@@ -10,4 +10,8 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0-preview.4.20220.10" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\projeto.tcc.wallet.management.domain\projeto.tcc.wallet.management.domain.csproj" />
+    </ItemGroup>
+
 </Project>

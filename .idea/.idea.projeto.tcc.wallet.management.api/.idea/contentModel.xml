@@ -43,9 +43,11 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Commands" t="Include">
           <e p="Command.cs" t="Include" />
+          <e p="ExecuteOrderCommand.cs" t="Include" />
         </e>
         <e p="CommandsHandlers" t="Include">
           <e p="CommandHandler.cs" t="Include" />
+          <e p="ExecuteOrderCommendHandler.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -55,6 +57,9 @@
           </e>
         </e>
         <e p="projeto.tcc.wallet.management.application.csproj" t="IncludeRecursive" />
+        <e p="Validations" t="Include">
+          <e p="ExecuteOrderCommandValidation.cs" t="Include" />
+        </e>
       </e>
       <e p="projeto.tcc.wallet.management.domain" t="IncludeRecursive">
         <e p="Aggregates" t="Include">
@@ -129,6 +134,9 @@
           </e>
         </e>
         <e p="projeto.tcc.wallet.management.infra.data.csproj" t="IncludeRecursive" />
+        <e p="Repository" t="Include">
+          <e p="Repository.cs" t="Include" />
+        </e>
       </e>
     </e>
   </component>

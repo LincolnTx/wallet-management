@@ -10,6 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\projeto.tcc.wallet.management.application\projeto.tcc.wallet.management.application.csproj" />
       <ProjectReference Include="..\projeto.tcc.wallet.management.domain\projeto.tcc.wallet.management.domain.csproj" />
     </ItemGroup>
 
