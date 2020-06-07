@@ -10,13 +10,13 @@ namespace projeto.tcc.wallet.management.api.v1.Controllers
 	{
 		private readonly IMediator _mediator;
 		
-		protected PatrimonyController(INotificationHandler<ExceptionNotification> notifications) : base(notifications)
+		public PatrimonyController(INotificationHandler<ExceptionNotification> notifications, IMediator mediator) : base(notifications)
 		{
-			_mediator = _mediator;
+			_mediator = mediator;
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> EfetivarOrder([FromBody] ExecuteOrderCommand executeOrderCommand)
+		public async Task<IActionResult> EfetiveOrder([FromBody] ExecuteOrderCommand executeOrderCommand)
 		{
 			await _mediator.Send(executeOrderCommand);
 			

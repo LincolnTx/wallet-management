@@ -1,6 +1,7 @@
 ﻿using System;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using projeto.tcc.wallet.management.application.Mapper;
 
 namespace projeto.tcc.wallet.management.infra.crosscutting.ioc.Configuration
 {
@@ -10,7 +11,7 @@ namespace projeto.tcc.wallet.management.infra.crosscutting.ioc.Configuration
 		{
 			if (services == null) throw new ArgumentException(nameof(services));
 			
-			// services.AddAutoMapper();
+			services.AddAutoMapper(typeof(ExecuteOrderCommandToBalance));
 		}
 	}
 }

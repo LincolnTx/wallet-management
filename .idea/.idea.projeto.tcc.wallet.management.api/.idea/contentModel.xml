@@ -47,7 +47,14 @@
         </e>
         <e p="CommandsHandlers" t="Include">
           <e p="CommandHandler.cs" t="Include" />
-          <e p="ExecuteOrderCommendHandler.cs" t="Include" />
+          <e p="ExecuteOrderCommandHandler.cs" t="Include" />
+        </e>
+        <e p="EventHandlers" t="Include">
+          <e p="AddAssetWhenExecutingOrder.cs" t="Include" />
+          <e p="EventHandler.cs" t="Include" />
+        </e>
+        <e p="Mapper" t="Include">
+          <e p="ExecuteOrderCommandToBalance.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -63,15 +70,19 @@
       </e>
       <e p="projeto.tcc.wallet.management.domain" t="IncludeRecursive">
         <e p="Aggregates" t="Include">
-          <e p="UserBalanceAggregate" t="Include">
-            <e p="AssetBalance.cs" t="Include" />
-            <e p="AssetValueObject.cs" t="Include" />
-            <e p="Balance.cs" t="Include" />
+          <e p="BalanceAggregate" t="Include">
+            <e p="IBalanceRepository.cs" t="Include" />
+            <e p="UserBalance.cs" t="Include" />
+          </e>
+          <e p="UserAggregate" t="Include">
+            <e p="User.cs" t="Include" />
+            <e p="UserAssetValueObject.cs" t="Include" />
           </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="Events" t="Include">
           <e p="Event.cs" t="Include" />
+          <e p="ExecutingOrderDomainEvent.cs" t="Include" />
         </e>
         <e p="Exceptions" t="Include">
           <e p="ExceptionNotification.cs" t="Include" />
@@ -109,9 +120,11 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="Configuration" t="Include">
           <e p="AutoMapperSetup.cs" t="Include" />
-          <e p="MediatorExtension.cs" t="Include" />
+          <e p="DatabaseSetup.cs" t="Include" />
+          <e p="DependencyInjectionSetup.cs" t="Include" />
           <e p="SwaggerSetup.cs" t="Include" />
         </e>
+        <e p="NativeInjectorBootstrapper.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -126,6 +139,15 @@
         <e p="Context" t="Include">
           <e p="ApplicationDbContextcs.cs" t="Include" />
         </e>
+        <e p="Mappings" t="Include">
+          <e p="BalanceMap.cs" t="Include" />
+        </e>
+        <e p="MediatorExtension.cs" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20200607002726_InitialMigration.cs" t="Include" />
+          <e p="20200607002726_InitialMigration.Designer.cs" t="Include" />
+          <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -135,7 +157,11 @@
         </e>
         <e p="projeto.tcc.wallet.management.infra.data.csproj" t="IncludeRecursive" />
         <e p="Repository" t="Include">
+          <e p="BalanceRepository.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
+        </e>
+        <e p="UnitOfWork" t="Include">
+          <e p="UnitOfWork.cs" t="Include" />
         </e>
       </e>
     </e>

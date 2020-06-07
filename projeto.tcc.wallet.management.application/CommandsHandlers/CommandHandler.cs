@@ -9,7 +9,7 @@ namespace projeto.tcc.wallet.management.application.CommandsHandlers
 	public abstract class CommandHandler
 	{
 		private readonly IUnitOfWork _uow;
-		private readonly IMediator _bus;
+		protected readonly IMediator _bus;
 		private readonly ExceptionNotificationHandler _notifications;
 
 		protected CommandHandler(INotificationHandler<ExceptionNotification> notifications, IMediator bus,

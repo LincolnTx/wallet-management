@@ -23,7 +23,7 @@ namespace projeto.tcc.wallet.management.application.Validations
 
 		protected void ValidateSymbol()
 		{
-			RuleFor(executeOrder => executeOrder.Symbol)
+			RuleFor(executeOrder => executeOrder.Asset.Symbol)
 				.NotEmpty()
 				.NotNull()
 				.WithMessage("Campo symbol obrigatório");

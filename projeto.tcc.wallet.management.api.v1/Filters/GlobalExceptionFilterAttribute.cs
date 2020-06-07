@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace projeto.tcc.wallet.management.api.v1.Filters
 {
-	public class GlobalExceptionFilterAttribute
+	public class GlobalExceptionFilterAttribute : Attribute, IExceptionFilter
 	{
 		public GlobalExceptionFilterAttribute() { }
 
