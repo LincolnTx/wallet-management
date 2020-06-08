@@ -8,11 +8,12 @@ namespace projeto.tcc.wallet.management.infra.data.Repository
 	{
 		protected readonly ApplicationDbContext _applicationDbContext;
 		protected readonly DbSet<TEntity> _dbSet;
+		
 
 		public Repository(ApplicationDbContext applicationDbContext)
 		{
-			_applicationDbContext = _applicationDbContext;
-			_dbSet = applicationDbContext.Set<TEntity>();
+			_applicationDbContext = applicationDbContext;
+			_dbSet = _applicationDbContext.Set<TEntity>();
 		}
 
 		public void Add(TEntity obj)

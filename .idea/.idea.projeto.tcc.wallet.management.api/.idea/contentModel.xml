@@ -50,8 +50,10 @@
           <e p="ExecuteOrderCommandHandler.cs" t="Include" />
         </e>
         <e p="EventHandlers" t="Include">
-          <e p="AddAssetWhenExecutingOrder.cs" t="Include" />
           <e p="EventHandler.cs" t="Include" />
+          <e p="ExecutingOrderDomainEventHandlers" t="Include">
+            <e p="AddAssetWhenExecutingOrder.cs" t="Include" />
+          </e>
         </e>
         <e p="Mapper" t="Include">
           <e p="ExecuteOrderCommandToBalance.cs" t="Include" />
@@ -70,13 +72,13 @@
       </e>
       <e p="projeto.tcc.wallet.management.domain" t="IncludeRecursive">
         <e p="Aggregates" t="Include">
+          <e p="AssetAggregate" t="Include">
+            <e p="Asset.cs" t="Include" />
+            <e p="IAssetRepository.cs" t="Include" />
+          </e>
           <e p="BalanceAggregate" t="Include">
             <e p="IBalanceRepository.cs" t="Include" />
             <e p="UserBalance.cs" t="Include" />
-          </e>
-          <e p="UserAggregate" t="Include">
-            <e p="User.cs" t="Include" />
-            <e p="UserAssetValueObject.cs" t="Include" />
           </e>
         </e>
         <e p="bin" t="ExcludeRecursive" />
@@ -140,12 +142,15 @@
           <e p="ApplicationDbContextcs.cs" t="Include" />
         </e>
         <e p="Mappings" t="Include">
+          <e p="AssetMap.cs" t="Include" />
           <e p="BalanceMap.cs" t="Include" />
         </e>
         <e p="MediatorExtension.cs" t="Include" />
         <e p="Migrations" t="Include">
           <e p="20200607002726_InitialMigration.cs" t="Include" />
           <e p="20200607002726_InitialMigration.Designer.cs" t="Include" />
+          <e p="20200608001622_CreateAsset.cs" t="Include" />
+          <e p="20200608001622_CreateAsset.Designer.cs" t="Include" />
           <e p="ApplicationDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -157,6 +162,7 @@
         </e>
         <e p="projeto.tcc.wallet.management.infra.data.csproj" t="IncludeRecursive" />
         <e p="Repository" t="Include">
+          <e p="AssetRepository.cs" t="Include" />
           <e p="BalanceRepository.cs" t="Include" />
           <e p="Repository.cs" t="Include" />
         </e>

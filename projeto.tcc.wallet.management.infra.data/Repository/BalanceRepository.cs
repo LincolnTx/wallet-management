@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using projeto.tcc.wallet.management.domain.Aggregates.BalanceAggregate;
@@ -13,7 +14,7 @@ namespace projeto.tcc.wallet.management.infra.data.Repository
 		
 		public async Task<UserBalance> GetBalanceByUserId(Guid userId)
 		{
-			return  await _dbSet.AsNoTracking().FirstOrDefaultAsync( user => user.Id == userId);
+			return  await _dbSet.FirstOrDefaultAsync(user => user._userId == userId);
 		}
 	}
 }

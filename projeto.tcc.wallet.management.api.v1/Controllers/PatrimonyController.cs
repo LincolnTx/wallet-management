@@ -20,7 +20,7 @@ namespace projeto.tcc.wallet.management.api.v1.Controllers
 		{
 			await _mediator.Send(executeOrderCommand);
 			
-			return Response(10, null);
+			return new NoContentResult();
 		}
 	}
 }

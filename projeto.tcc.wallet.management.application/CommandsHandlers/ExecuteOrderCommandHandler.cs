@@ -13,19 +13,16 @@ namespace projeto.tcc.wallet.management.application.CommandsHandlers
 	public class ExecuteOrderCommandHandler : CommandHandler, IRequestHandler<ExecuteOrderCommand, bool>
 	{
 		private readonly  IBalanceRepository _balanceRepository;
-		private readonly IMapper _mapper;
 		public ExecuteOrderCommandHandler(
 			INotificationHandler<ExceptionNotification> notifications,
 			IMediator bus,
 			IUnitOfWork uow,
-			IBalanceRepository balanceRepository,
-			IMapper mapper
+			IBalanceRepository balanceRepository
 			) : base(notifications,
 			bus,
 			uow)
 		{
 			_balanceRepository = balanceRepository;
-			_mapper = mapper;
 		}
 
 		public async Task<bool> Handle(ExecuteOrderCommand request, CancellationToken cancellationToken)

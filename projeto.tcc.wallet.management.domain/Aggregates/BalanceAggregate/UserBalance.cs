@@ -8,9 +8,10 @@ namespace projeto.tcc.wallet.management.domain.Aggregates.BalanceAggregate
 {
 	public class UserBalance : Entity, IAggregateRoot
 	{
-		private Guid _userId;
+		public Guid _userId { get; private set; }
+		public Guid GetUserID => _userId; 
+
 		private decimal _totalPatrimony;
-		public decimal GetTotalPatrimony => _totalPatrimony; 
 		private decimal _transientBalance;
 
 
@@ -22,12 +23,12 @@ namespace projeto.tcc.wallet.management.domain.Aggregates.BalanceAggregate
 		public void ExecuteOrderAndCalculateTotalBalance(string name,string symbol, decimal startPrice)
 		{
 			_totalPatrimony -= startPrice;
-			AddDomainEvent(new ExecutingOrderDomainEvent(name, symbol, startPrice));
+			AddDomainEvent(new ExecutingOrderDomainEvent(this._userId, name, symbol, startPrice));
 		}
 		
 		public bool VerifyBalance(decimal startPrice)
 		{
-			return startPrice >= this.GetTotalPatrimony;
+			return _totalPatrimony >= startPrice;
 		}
 		public UserBalance(Guid userId)
 		{

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using projeto.tcc.wallet.management.domain.Aggregates.BalanceAggregate;
 using projeto.tcc.wallet.management.infra.data.Mappings;
 
 namespace projeto.tcc.wallet.management.infra.data.Context
@@ -36,7 +37,7 @@ namespace projeto.tcc.wallet.management.infra.data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new BalanceMap());
-  
+            modelBuilder.ApplyConfiguration(new AssetMap());
         }
 
          public async Task<bool> SaveEntitiesAsync(CancellationToken cancellationToken = default(CancellationToken))
