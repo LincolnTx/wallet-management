@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using projeto.tcc.wallet.management.api.v1.Filters;
 using projeto.tcc.wallet.management.application.Commands;
 using projeto.tcc.wallet.management.application.CommandsHandlers;
+using projeto.tcc.wallet.management.hub;
 using projeto.tcc.wallet.management.infra.crosscutting.ioc.Configuration;
 
 namespace projeto.tcc.wallet.management.api.v1
@@ -36,8 +37,15 @@ namespace projeto.tcc.wallet.management.api.v1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // var appSettings = Configuration.GetSection("Configuracoes").Get<AppSettings>();
-            // var connectionString = Environment.GetEnvironmentVariable("ConnectionString");
+            var redis = Configuration.GetConnectionString("RedisConnection");
+            services.AddControllers();
+
+            services.AddDistributedRedisCache(options =>
+            {
+                options.Configuration = Configuration.GetConnectionString("RedisConnection");
+                options.InstanceName = "Quotes:";
+            });
+
 
 
             services.AddDatabaseSetup();
@@ -74,6 +82,8 @@ namespace projeto.tcc.wallet.management.api.v1
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapHub<NotificationWalletHub>("/hub/wallet");
+
                 // app.UseHealthCheck(endpoints);
             });
 

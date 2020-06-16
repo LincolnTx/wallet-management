@@ -7,6 +7,9 @@
    	public interface IBalanceRepository : IRepository<UserBalance>
    	{
    		// somente get ById
-   		public Task<UserBalance> GetBalanceByUserId(Guid userId);
-   	}
+   		 Task<UserBalance> GetBalanceByUserId(Guid userId);
+
+        //Task Update();
+
+       }
    }

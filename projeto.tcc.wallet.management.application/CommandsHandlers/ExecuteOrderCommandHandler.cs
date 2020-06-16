@@ -35,12 +35,12 @@ namespace projeto.tcc.wallet.management.application.CommandsHandlers
 			
 			var user = await _balanceRepository.GetBalanceByUserId(request.UserId);
 			
-			 if (!user.VerifyBalance( request.Asset.StartPrice))
+			 if (!user.VerifyBalance(request.Asset.StartPrice))
 			 {
 				 await _bus.Publish(new ExceptionNotification("001", "Seu saldo não é suficiente para realizar essa ação"), cancellationToken);
 				 return false;
 			 }
-			 user.ExecuteOrderAndCalculateTotalBalance(request.Asset.Name, request.Asset.Symbol, request.Asset.StartPrice);
+			 user.ExecuteOrderAndCalculateTotalBalance(request.Asset.Symbol, request.Asset.StartPrice, request.Ammount);
 
 			 return await Commit();
 		}

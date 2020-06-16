@@ -8,11 +8,13 @@
       <PackageReference Include="MediatR" Version="8.0.1" />
       <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4" />
+      <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\projeto.tcc.wallet.management.application\projeto.tcc.wallet.management.application.csproj" />
       <ProjectReference Include="..\projeto.tcc.wallet.management.domain\projeto.tcc.wallet.management.domain.csproj" />
+      <ProjectReference Include="..\projeto.tcc.wallet.management.hub\projeto.tcc.wallet.management.hub.csproj" />
       <ProjectReference Include="..\projeto.tcc.wallet.management.infra.crosscutting.ioc\projeto.tcc.wallet.management.infra.crosscutting.ioc.csproj" />
     </ItemGroup>
 

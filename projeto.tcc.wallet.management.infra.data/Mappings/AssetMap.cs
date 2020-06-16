@@ -15,10 +15,6 @@ namespace projeto.tcc.wallet.management.infra.data.Mappings
 				.UsePropertyAccessMode(PropertyAccessMode.Field)
 				.HasColumnName("UserId");
 			
-			builder.Property<string>("_name")
-				.UsePropertyAccessMode(PropertyAccessMode.Field)
-				.HasColumnName("Name");
-			
 			builder.Property<string>("_symbol")
 				.UsePropertyAccessMode(PropertyAccessMode.Field)
 				.HasColumnName("Symbol");

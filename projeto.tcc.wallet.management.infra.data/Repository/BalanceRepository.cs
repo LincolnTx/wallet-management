@@ -7,14 +7,19 @@ using projeto.tcc.wallet.management.infra.data.Context;
 
 namespace projeto.tcc.wallet.management.infra.data.Repository
 {
-	public class BalanceRepository : Repository<UserBalance>, IBalanceRepository
-	{
-		public BalanceRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext) { }
-		
-		
-		public async Task<UserBalance> GetBalanceByUserId(Guid userId)
-		{
-			return  await _dbSet.FirstOrDefaultAsync(user => user._userId == userId);
-		}
-	}
+    public class BalanceRepository : Repository<UserBalance>, IBalanceRepository
+    {
+        public BalanceRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext) { }
+
+
+        public async Task<UserBalance> GetBalanceByUserId(Guid userId)
+        {
+            return await _dbSet.FirstOrDefaultAsync(user => user._userId == userId);
+        }
+
+        //public async Task Update()
+        //{
+        //    _dbSet.Update();
+        //}
+    }
 }

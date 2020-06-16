@@ -16,7 +16,7 @@ namespace projeto.tcc.wallet.management.application.EventHandlers.ExecutingOrder
 
 		public override Task Handle(ExecutingOrderDomainEvent notification, CancellationToken cancellationToken)
 		{
-			var asset = new Asset(notification.UserId,notification.Name, notification.Symbol, notification.StartPrice);
+			var asset = new Asset(notification.UserId, notification.Symbol, notification.StartPrice);
 			_assetRepository.Add(asset);
 			return Task.CompletedTask;
 		}

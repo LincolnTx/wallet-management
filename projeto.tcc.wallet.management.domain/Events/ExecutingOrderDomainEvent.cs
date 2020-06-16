@@ -4,17 +4,16 @@ namespace projeto.tcc.wallet.management.domain.Events
 {
 	public class ExecutingOrderDomainEvent : Event
 	{
-		public Guid UserId { get; }
-		public string Name { get; }
-		public string Symbol { get; }
-		public decimal StartPrice { get; }
-
-		public ExecutingOrderDomainEvent(Guid userId, string name, string symbol, decimal startPrice)
+		public Guid UserId { get; set; }
+		public string Symbol { get; set; }
+		public decimal StartPrice { get; set; }
+        public int Ammount { get; set; }
+		public ExecutingOrderDomainEvent(Guid userId, string symbol, decimal startPrice, int ammount)
 		{
 			UserId = userId;
-			Name = name;
 			Symbol = symbol;
 			StartPrice = startPrice;
+            Ammount = ammount;
 		}
 	}
 }

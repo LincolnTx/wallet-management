@@ -37,7 +37,7 @@ namespace projeto.tcc.wallet.management.application.Validations
 
 		protected void ValidateValue()
 		{
-			RuleFor(executeOrder => executeOrder.Value)
+			RuleFor(executeOrder => executeOrder.Ammount)
 				.GreaterThan(0)
 				.NotNull();
 		}
